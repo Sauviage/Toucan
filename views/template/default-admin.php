@@ -21,10 +21,6 @@
             <a href="portfolio-admin" class="menu-ordi underline">PORTFOLIO</a>
             <a href="cv-admin" class="menu-ordi underline">CV</a>
             <a href="contact-admin" class="menu-ordi underline">MESSAGES</a>
-            <?php if(!empty($_SESSION['username'])){
-                echo "<a class=\"menu-ordi underline\">" .$_SESSION['username']. "</a>";
-            }
-            ?>
         </nav>
     </div>
 </header>
@@ -38,7 +34,13 @@
         <a href="#"><i class="fa fa-twitter-square"></i></a>
         <a href="#"><i class="fa fa-google-plus-square"></i></a>
     </nav>
-    <p>&copy;Copyright - 2018 - <a href="#">Claire Erhard</a></p>
+    <p>&copy;Copyright - 2018 - <a href="/home">Claire Erhard</a> -
+        <?php if(!empty($_SESSION['username'])){
+            echo "<a href=\"/deconnexion\"><i class=\"fa fa-unlock\"></i>";
+        }else{
+            echo "<a href=\"/connection-admin\"><i class=\"fa fa-lock\"></i>";
+        }
+        ?>
 </footer>
 <script src="views/js/chart.js"></script>
 
