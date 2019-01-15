@@ -27,6 +27,18 @@ $(".delete").click(function(element){
             }
         });
     }
+    else if (categorie == "Connaisances"){
+        $.ajax({
+            url : 'views/controller/delete-cv.php',
+            type : 'POST',
+            data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
+            dataType : 'html',
+            success : function(code_html, statut){
+                console.log(code_html, statut);
+                $("#" + id).parent().parent().fadeOut("slow");
+            }
+        });
+    }
 
 
 });

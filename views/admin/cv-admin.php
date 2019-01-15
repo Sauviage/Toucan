@@ -7,6 +7,10 @@ $reponse = $bdd->query('SELECT * FROM diplomes');
 
 $diplomes = $reponse->fetchAll();
 
+$reponse = $bdd->query('SELECT * FROM connaissances');
+
+$connaissances = $reponse->fetchAll();
+
 ?>
 <h1>CV</h1>
 <div id="nav-page-portfolio">
@@ -89,7 +93,7 @@ $diplomes = $reponse->fetchAll();
     <div class="bloc-admin">
         <h3 class="catégorie">Connaissances</h3>
         <h4>Ajouter une connaissance</h4>
-        <form method="post" action="traitement.php">
+        <form method="post" action="views/controller/post-cv.php">
             <p>
                 <label for="icon">Legende :</label>
                 <input type="text" name="legende" id="legende" placeholder="Legendes..." />
@@ -102,6 +106,7 @@ $diplomes = $reponse->fetchAll();
                 <br>
                 <label for="titre">Couleur :</label>
                 <input type="text" name="couleur" id="couleur" placeholder="#000"  />
+                <input name="categorie" type="hidden" value="connaissances">
                 <br>
                 <button>Ajouter</button>
             </p>
@@ -117,14 +122,16 @@ $diplomes = $reponse->fetchAll();
                 <td><h4>Couleur</h4></td>
                 <td><h4>Modifier / Supprimer</h4></td>
             </tr>
+            <?php foreach ($connaissances as $connaissance) :?>
             <tr>
-                <td><input type="text" name="legende" id="legende" placeholder="legende"  /></td>
-                <td><input type="number" name="valeur" id="valeur" placeholder="niveau de compétence" /></td>
-                <td><input type="text" name="description" id="description" placeholder="Description"  /></td>
-                <td><input type="text" name="couleur" id="couleur" placeholder="#000"  /></td>
+                <td><input type="text" name="legende" id="legende" placeholder="legende" value="<?= $connaissance['label'] ?>" /></td>
+                <td><input type="number" name="valeur" id="valeur" placeholder="niveau de compétence" value="<?= $connaissance['value'] ?>" /></td>
+                <td><input type="text" name="description" id="description" placeholder="Description" value="<?= $connaissance['text'] ?>"/></td>
+                <td><input type="text" name="couleur" id="couleur" placeholder="#000" value="<?= $connaissance['couleur'] ?>"/></td>
                 <td><a><i class="fa fa-pencil-square"></i></a>
                     <a><i class="fa fa-window-close""></i></a></td>
             </tr>
+            <?php endforeach; ?>
         </table>
     </div>
 </div>

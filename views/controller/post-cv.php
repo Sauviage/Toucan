@@ -17,4 +17,15 @@ elseif ($_POST['categorie'] == 'diplomes'){
         'date' => $_POST['date']
     ));
 }
+elseif ($_POST['categorie'] == 'connaissances'){
+    $requete = $bdd->prepare("INSERT INTO connaissances(label, value, text, couleur) VALUES( :label, :value, :text, :couleur)");
+    $requete->execute(array(
+        'label' => $_POST['legende'],
+        'value' => $_POST['valeur'],
+        'text' => $_POST['description'],
+        'couleur' => $_POST['couleur']
+    ));
+}
+
+//var_dump($_POST);
 header('Location: http://localhost:3000/ToucanGulp/index.php?p=cv-admin');
