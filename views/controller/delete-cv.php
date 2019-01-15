@@ -15,6 +15,12 @@ elseif ($_POST['categorie'] == 'Diplomes'){
         'id' => $_POST['id'],
     ));
 }
+elseif ($_POST['categorie'] == 'Connaissances'){
+    $requete = $bdd->prepare('DELETE FROM Connaissances WHERE id=:id');
+    $requete->execute(array(
+        'id' => $_POST['id'],
+    ));
+}
 
 
 
