@@ -18,9 +18,13 @@
 <header>
     <div id="computer-header-admin">
         <nav>
-            <a href="index.php?p=portfolio-admin" class="menu-ordi underline">PORTFOLIO</a>
-            <a href="index.php?p=cv-admin" class="menu-ordi underline">CV</a>
-            <a href="index.php?p=contact-admin" class="menu-ordi underline">MESSAGES</a>
+            <a href="portfolio-admin" class="menu-ordi underline">PORTFOLIO</a>
+            <a href="cv-admin" class="menu-ordi underline">CV</a>
+            <a href="contact-admin" class="menu-ordi underline">MESSAGES</a>
+            <?php if(!empty($_SESSION['username'])){
+                echo "<a class=\"menu-ordi underline\">" .$_SESSION['username']. "</a>";
+            }
+            ?>
         </nav>
     </div>
 </header>

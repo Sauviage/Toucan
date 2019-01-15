@@ -10,9 +10,9 @@ var test = new Chart(document.getElementById("bar-chart-horizontal"), {
         labels: ["Intégration", "JavaScript", "Webdesign", "Wordpress"],
         datasets: [
             {
-                label: ["test"],
-                backgroundColor: ["#ffc300", "#ec610a","#a40a3c","#6b0848"],
-                data: [8,2,10,4]
+                label: [],
+                backgroundColor: [],
+                data: []
             }
         ]
     },
@@ -46,10 +46,10 @@ var test = new Chart(document.getElementById("bar-chart-horizontal"), {
             callbacks: {
                 title: function(tooltipItem, data) {
                     return data['labels'][tooltipItem[0]['index']];
+
                 },
                 label: function(tooltipItem, data) {
-                    //return data['datasets'][0]['data'][tooltipItem['index']];
-                    return data.datasets[0].label[0];;
+                    return data.datasets[0].label[tooltipItem['index']];
                 },
                 afterLabel: function(tooltipItem, data) {
                     /*var dataset = data['datasets'][0];
@@ -60,12 +60,19 @@ var test = new Chart(document.getElementById("bar-chart-horizontal"), {
             titleFontColor: '#fff',
 
         },
-        hover: {
+        /*hover: {
             onHover: function(evt, item) {
-                if(item[0]._index == 0){
+                //console.log(item);
+
+                var items = item[0];
+
+                console.log(items);
+
+                if(item == 0){
+                    console.log(item);
                     test.data.datasets[0].label[0] = "HTML et CSS";
                 }
-                if(item[0]._index == 1){
+                if(item._index == 1){
                     test.data.datasets[0].label[0] = "Integration plugin";
                 }
                 if(item[0]._index == 2){
@@ -75,7 +82,7 @@ var test = new Chart(document.getElementById("bar-chart-horizontal"), {
                     test.data.datasets[0].label[0] = "Mise en place et administation";
                 }
             }
-        },
+        },*/
         title: {
             display: true,
             text: ''

@@ -33,7 +33,7 @@
                 <span></span>
                 <ul id="menu">
                     <a href="index.php?p=home"><li>HOME</li></a>
-                    <a href="index.php?p=portfolio"><li>PORTFOLIO</li></a>
+                    <a href="portfolio"><li>PORTFOLIO</li></a>
                     <a href="index.php?p=cv"><li>CV</li></a>
                     <a href="index.php?p=contact"><li>CONTACT</li></a>
                 </ul>
@@ -44,15 +44,20 @@
 <!--    ORDI   -->
     <div id="computer-header">
         <nav>
-            <a href="index.php?p=home" class="menu-ordi underline" >HOME</a>
-            <a href="index.php?p=portfolio" class="menu-ordi underline">PORTFOLIO</a>
+            <a href="home" class="menu-ordi underline" >HOME</a>
+            <a href="portfolio" class="menu-ordi underline">PORTFOLIO</a>
             <div class="logo menu-ordi">
                 <a href="index.php">
                     <img class="pulse" src="views/img/logofinal.png" alt="logo-toucan">
                 </a>
             </div>
-            <a href="index.php?p=cv" class="menu-ordi underline">CV</a>
-            <a href="index.php?p=contact" class="menu-ordi underline">CONTACT</a>
+            <a href="cv" class="menu-ordi underline">CV</a>
+            <a href="contact" class="menu-ordi underline">CONTACT</a>
+            <?php if(!empty($_SESSION['username'])){
+                 echo "<a class=\"menu-ordi underline\">" .$_SESSION['username']. "</a>";
+            }
+            ?>
+
         </nav>
     </div>
 </header>
@@ -68,6 +73,6 @@
     </nav>
     <p>&copy;Copyright - 2018 - <a href="#">Claire Erhard</a></p>
 </footer>
-<script src="views/js/chart.js"></script>
+
 </body>
 </html>

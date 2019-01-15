@@ -24,4 +24,4 @@ $requete->execute(array(
     'adresse_img' => $nom
 
 ));
-header('Location: http://localhost:3000/ToucanGulp/index.php?p=portfolio-admin');
+header('Location: http://127.0.0.1/Toucan/Toucan/portfolio-admin');

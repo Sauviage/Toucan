@@ -1,4 +1,7 @@
 <?php
+
+include "views/utils/utils.php";
+
 $reponse = $bdd->query('SELECT * FROM experiences');
 
 $experiences = $reponse->fetchAll();
@@ -6,6 +9,10 @@ $experiences = $reponse->fetchAll();
 $reponse = $bdd->query('SELECT * FROM diplomes');
 
 $diplomes = $reponse->fetchAll();
+
+$reponse = $bdd->query('SELECT * FROM connaissances');
+
+$connaissances = $reponse->fetchAll();
 
 ?>
 <h1>Curriculum vitae</h1>
@@ -33,13 +40,14 @@ $diplomes = $reponse->fetchAll();
     <article class="cv-categorie">
         <h3>Connaissances :</h3>
         <canvas id="bar-chart-horizontal" width="800" height="300"></canvas>
-
-
-
-
-
     </article>
-
+    <script src="views/js/chart.js"></script>
+    <script>
+    <?php
+        chartJs($connaissances);
+    ?>
+    test.update();
+    </script>
 
 
 
