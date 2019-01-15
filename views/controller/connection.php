@@ -25,9 +25,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 session_start();
                 $_SESSION['username'] = $username;
                 header('Location: ../../admin');
+            }else{
+                header('Location: ../../connection-admin?error=1');
             }
-    }else{
-        header('Location: ../../connection-admin');
     }
 
 }

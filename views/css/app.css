@@ -300,7 +300,11 @@ footer p a {
   -webkit-transform: scaleX(1);
   transform: scaleX(1); }
 
-/*ADMIN MENU*/
+/*ADMIN CONNEXION*/
+.msg-erreur-connexion {
+  color: #be1e2d !important;
+  font-size: 0.6em !important; }
+
 /*ADMIN PORTFOLIO*/
 .bloc-admin {
   border: #be1e2d solid 2px;
