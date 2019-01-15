@@ -28,4 +28,4 @@ elseif ($_POST['categorie'] == 'connaissances'){
 }
 
 //var_dump($_POST);
-header('Location: http://localhost:3000/ToucanGulp/index.php?p=cv-admin');
+header('Location: ../../cv-admin');

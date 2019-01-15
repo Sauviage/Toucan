@@ -59,9 +59,8 @@ elseif($p === 'connection-admin') {
 }
 elseif($p === 'deconnexion') {
     session_destroy();
-    require 'views/post/home.php';
     $content = ob_get_clean();
-    require 'views/template/default.php';
+    header('Location: /home');
 }
 else{
     require 'views/post/home.php';
