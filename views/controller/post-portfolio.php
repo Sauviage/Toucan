@@ -6,7 +6,16 @@ require 'database.php';
 
 $nom = "../../../ToucanGulp/views/img/" .$_FILES['img']['name']. "";
 
-$resultat = move_uploaded_file($_FILES['img']['tmp_name'],$nom);
+var_dump(getcwd());
+
+$nom = getcwd() . "\\..\\img\\" .$_FILES['img']['name'];
+
+//chdir('../../img/');
+echo $nom;
+var_dump(getcwd());
+var_dump($_FILES['img']);
+
+$resultat = move_uploaded_file($_FILES['img']['tmp_name'], $nom);
 
 if ($resultat) echo "Transfert réussi";
 
@@ -21,7 +30,7 @@ $requete->execute(array(
     'lien' => $_POST['lien'],
     'titre' => $_POST['titre'],
     'soustitre' => $_POST['soustitre'],
-    'adresse_img' => $nom
+    'adresse_img' => $_FILES['img']['name']
 
 ));
 header('Location: ../../portfolio-admin');

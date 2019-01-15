@@ -12,7 +12,7 @@ $articles = $reponse->fetchAll();
         background: linear-gradient(
                   rgba(190, 30, 45, 0.75),
                   rgba(243, 191, 191, 0.75)
-  ),url('<?= $article['adresse_img'] ?>') no-repeat center; background-size: cover"></div>
+  ),url('views/img/<?= $article['adresse_img'] ?>') no-repeat center; background-size: cover"></div>
         <div class="contenu text">
             <a href="<?= $article['lien'] ?>" class="lien-cliquable">
                 <i class="<?= $article['icon'] ?>"></i>
