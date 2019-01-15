@@ -24,8 +24,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 echo 1;
                 session_start();
                 $_SESSION['username'] = $username;
-                header('Location: http://waraliens.ddns.net/admin');
+                header('Location: ../../admin');
             }
+    }else{
+        header('Location: ../../connection-admin');
     }
 
 }
