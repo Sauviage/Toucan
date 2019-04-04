@@ -1,30 +1,51 @@
 $(".update").click(function(element){
-    console.log("clic");
     element.preventDefault();
     var id = element["currentTarget"]["id"];
-    var categorie = $("#" + id).parent().parent().parent().parent().parent().find("h3")[0]["innerText"];
+
+    var categorie = $(this).parent().parent().parent().parent().parent().find("h3")[0]["innerText"];
+
 
     if (categorie == "Experience"){
+
+        var formData = new FormData();
+        var id = element["currentTarget"]["id"];
+
+
+        formData.append("categorie", categorie);
+        formData.append("id", id);
+        formData.append("entreprise", $(this).parent().parent().children('#entreprise').children('input').val());
+        formData.append("lien", $(this).parent().parent().children('#lien').children('input').val());
+        formData.append("date", $(this).parent().parent().children('#date').children('input').val());
+
         $.ajax({
             url : 'views/controller/update-cv.php',
             type : 'POST',
-            data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
-            dataType : 'html',
+            data : formData,
+            processData: false,
+            contentType: false,
             success : function(code_html, statut){
-                console.log(code_html, statut);
-                $("#" + id).parent().parent().fadeOut("slow");
             }
         });
     }
     else if (categorie == "Diplomes"){
+
+        var formData = new FormData();
+        var id = element["currentTarget"]["id"];
+
+        formData.append("categorie", categorie);
+        formData.append("id", id);
+        formData.append("diplome", $(this).parent().parent().children('#diplome').children('input').val());
+        formData.append("lien", $(this).parent().parent().children('#lien').children('input').val());
+        formData.append("date", $(this).parent().parent().children('#date').children('input').val());
+
         $.ajax({
             url : 'views/controller/update-cv.php',
             type : 'POST',
-            data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
-            dataType : 'html',
+            data : formData,
+            processData: false,
+            contentType: false,
             success : function(code_html, statut){
-                console.log(code_html, statut);
-                $("#" + id).parent().parent().fadeOut("slow");
+                //$("#" + id).parent().parent().fadeOut("slow");
             }
         });
     }
@@ -35,8 +56,6 @@ $(".update").click(function(element){
 
 
         //formData.append
-
-        console.log(element["currentTarget"]["id"]);
 
         formData.append("categorie", categorie);
         formData.append("id", id);
@@ -72,7 +91,6 @@ $(".delete").click(function(element){
         data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
         dataType : 'html',
         success : function(code_html, statut){
-            console.log(code_html, statut);
             $("#" + id).parent().parent().fadeOut("slow");
         }
     });
@@ -84,7 +102,6 @@ $(".delete").click(function(element){
             data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
             dataType : 'html',
             success : function(code_html, statut){
-                console.log(code_html, statut);
                 $("#" + id).parent().parent().fadeOut("slow");
             }
         });
@@ -96,7 +113,6 @@ $(".delete").click(function(element){
             data : 'id= ' + $(this).attr("id") + '&categorie=' + categorie,
             dataType : 'html',
             success : function(code_html, statut){
-                console.log(code_html, statut);
                 $("#" + id).parent().parent().fadeOut("slow");
             }
         });

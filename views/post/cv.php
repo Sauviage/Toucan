@@ -21,7 +21,7 @@ $connaissances = $reponse->fetchAll();
         <h3>Experiences :</h3>
         <ul>
             <?php foreach ($experiences as $experience) :?>
-            <li><a href="<?= $experience['lien'] ?>"><?= $experience['titre'] ?></a> - <?= $experience['date'] ?></li>
+            <li><a href="<?= $experience['lien'] ?>"><?= $experience['entreprise'] ?></a> - <?= $experience['date'] ?></li>
             <?php endforeach; ?>
         </ul>
     </article>
@@ -33,7 +33,7 @@ $connaissances = $reponse->fetchAll();
         <h3>Diplomes & Formations :</h3>
         <ul>
             <?php foreach ($diplomes as $diplome) :?>
-            <li><a href="<?= $diplome['lien'] ?>"><?= $diplome['titre'] ?></a> - <?= $diplome['date'] ?></li>
+            <li><a href="<?= $diplome['lien'] ?>"><?= $diplome['diplome'] ?></a> - <?= $diplome['date'] ?></li>
             <?php endforeach; ?>
         </ul>
     </article>

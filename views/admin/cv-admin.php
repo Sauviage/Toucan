@@ -20,7 +20,7 @@ $connaissances = $reponse->fetchAll();
         <form method="post" action="views/controller/post-cv.php">
             <p>
                 <label for="icon">Entreprise :</label>
-                <input type="text" name="titre" id="diplome" placeholder="Nom du diplome..."  />
+                <input type="text" name="entreprise" id="entreprise" placeholder="Nom de l'entreprise..."  />
                 <br>
                 <label for="lien">Lien (facultatif) :</label>
                 <input type="text" name="lien" id="lien" placeholder="https://..." />
@@ -42,9 +42,9 @@ $connaissances = $reponse->fetchAll();
             </tr>
             <?php foreach ($experiences as $experience) :?>
             <tr>
-                <td><input type="text" name="entreprise" id="entreprise" placeholder="Nom du site / Entreprise" value="<?= $experience['titre'] ?>"  /></td>
-                <td><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $experience['lien'] ?>" /></td>
-                <td><input type="text" name="date" id="date" placeholder="Date..." value="<?= $experience['date'] ?>" /></td>
+                <td id="entreprise"><input type="text" name="entreprise" id="entreprise" placeholder="Nom du site / Entreprise" value="<?= $experience['entreprise'] ?>"  /></td>
+                <td id="lien"><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $experience['lien'] ?>" /></td>
+                <td id="date"><input type="text" name="date" id="date" placeholder="Date..." value="<?= $experience['date'] ?>" /></td>
                 <td><a href="#" id="<?= $experience['id'] ?>" class="update"><i class="fas fa-pen-square"></i></a>
                     <a href="#" id="<?= $experience['id'] ?>" class="delete"><i class="fa fa-window-close""></i></a></td>
             </tr>
@@ -58,7 +58,7 @@ $connaissances = $reponse->fetchAll();
         <form method="post" action="views/controller/post-cv.php">
             <p>
                 <label for="icon">Diplome :</label>
-                <input type="text" name="titre" id="titre" placeholder="Nom de l'entreprise..." />
+                <input type="text" name="diplome" id="diplome" placeholder="Nom du diplome..." />
                 <br>
                 <label for="lien">Lien (facultatif) :</label>
                 <input type="text" name="lien" id="lien" placeholder="https://..." />
@@ -80,9 +80,9 @@ $connaissances = $reponse->fetchAll();
             </tr>
             <?php foreach ($diplomes as $diplome) :?>
             <tr>
-                <td><input type="text" name="entreprise" id="entreprise" placeholder="Nom du site / Entreprise" value="<?= $diplome['titre'] ?>" /></td>
-                <td><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $diplome['lien'] ?>"/></td>
-                <td><input type="text" name="date" id="date" placeholder="Date..." value="<?= $diplome['date'] ?>" /></td>
+                <td id="diplome"><input type="text" name="diplome" id="diplome" placeholder="Nom du site / Entreprise" value="<?= $diplome['diplome'] ?>" /></td>
+                <td id="lien"><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $diplome['lien'] ?>"/></td>
+                <td id="date"><input type="text" name="date" id="date" placeholder="Date..." value="<?= $diplome['date'] ?>" /></td>
                 <td><a href="#" id="<?= $diplome['id'] ?>" class="update"><i class="fas fa-pen-square"></i></a>
                     <a href="#" id="<?= $diplome['id'] ?>" class="delete"><i class="fa fa-window-close""></i></a></td>
             </tr>

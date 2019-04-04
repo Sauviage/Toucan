@@ -8,15 +8,8 @@
 
 session_start();
 
-
-
-$nom = "salut";
-
 if(!empty($_SESSION['username'])){
 
-
-    var_dump($_FILES);
-    var_dump($_POST);
     require 'database.php';
 
     if(!empty($_FILES)){
