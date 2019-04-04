@@ -6,7 +6,7 @@ $reponse = $bdd->query('SELECT * FROM experiences');
 
 $experiences = $reponse->fetchAll();
 
-$reponse = $bdd->query('SELECT * FROM diplomes');
+$reponse = $bdd->query('SELECT * FROM diplomes ORDER BY date desc');
 
 $diplomes = $reponse->fetchAll();
 

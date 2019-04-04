@@ -1,5 +1,5 @@
 <?php
-$reponse = $bdd->query('SELECT * FROM projets');
+$reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
 $articles = $reponse->fetchAll();
 ?>
 <h1>PORTFOLIO</h1>
@@ -44,7 +44,7 @@ $articles = $reponse->fetchAll();
             <td id="adresse_img">
                 <img src="" style="width: 200px">
                 <input type="file" name="img" id="adresse_img" value="<?= $article['adresse_img'] ?>" /></td>
-            <td><a href="#" id="<?= $article['id'] ?>" class="modification"><i class="fa fa-pencil-square"></i></a>
+            <td><a href="#" id="<?= $article['id'] ?>" class="modification"><i class="fas fa-pen-square"></i></a>
                 <a href="#" id="<?= $article['id'] ?>" class="delete"><i class="fa fa-window-close"></i></a></td>
         </tr>
         <?php endforeach; ?>

@@ -60,7 +60,7 @@ elseif($p === 'connection-admin') {
 elseif($p === 'deconnexion') {
     session_destroy();
     $content = ob_get_clean();
-    header('Location: /home');
+    header('Location: home');
 }
 else{
     require 'views/post/home.php';

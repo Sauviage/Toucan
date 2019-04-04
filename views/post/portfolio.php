@@ -1,5 +1,5 @@
 <?php
-$reponse = $bdd->query('SELECT * FROM projets');
+$reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
 
 $articles = $reponse->fetchAll();
 
@@ -10,8 +10,8 @@ $articles = $reponse->fetchAll();
      <article class="nav-option-portfolio">
         <div class="filtre-bleu" style="
         background: linear-gradient(
-                  rgba(190, 30, 45, 0.75),
-                  rgba(243, 191, 191, 0.75)
+                  rgba(190, 30, 45, 0.40),
+                  rgba(243, 191, 191, 0.40)
   ),url('views/img/<?= $article['adresse_img'] ?>') no-repeat center; background-size: cover"></div>
         <div class="contenu text">
             <a href="<?= $article['lien'] ?>" class="lien-cliquable">

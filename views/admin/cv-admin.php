@@ -45,7 +45,7 @@ $connaissances = $reponse->fetchAll();
                 <td><input type="text" name="entreprise" id="entreprise" placeholder="Nom du site / Entreprise" value="<?= $experience['titre'] ?>"  /></td>
                 <td><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $experience['lien'] ?>" /></td>
                 <td><input type="text" name="date" id="date" placeholder="Date..." value="<?= $experience['date'] ?>" /></td>
-                <td><a href="#" id="<?= $experience['id'] ?>" class="update"><i class="fa fa-pencil-square"></i></a>
+                <td><a href="#" id="<?= $experience['id'] ?>" class="update"><i class="fas fa-pen-square"></i></a>
                     <a href="#" id="<?= $experience['id'] ?>" class="delete"><i class="fa fa-window-close""></i></a></td>
             </tr>
             <?php endforeach; ?>
@@ -83,7 +83,7 @@ $connaissances = $reponse->fetchAll();
                 <td><input type="text" name="entreprise" id="entreprise" placeholder="Nom du site / Entreprise" value="<?= $diplome['titre'] ?>" /></td>
                 <td><input type="text" name="lien" id="lien" placeholder="https://..." value="<?= $diplome['lien'] ?>"/></td>
                 <td><input type="text" name="date" id="date" placeholder="Date..." value="<?= $diplome['date'] ?>" /></td>
-                <td><a href="#" id="<?= $diplome['id'] ?>" class="update"><i class="fa fa-pencil-square"></i></a>
+                <td><a href="#" id="<?= $diplome['id'] ?>" class="update"><i class="fas fa-pen-square"></i></a>
                     <a href="#" id="<?= $diplome['id'] ?>" class="delete"><i class="fa fa-window-close""></i></a></td>
             </tr>
             <?php endforeach; ?>
@@ -128,7 +128,7 @@ $connaissances = $reponse->fetchAll();
                 <td id="competence"><input type="number" name="valeur" id="valeur" placeholder="niveau de compétence" value="<?= $connaissance['value'] ?>" /></td>
                 <td id="description"><input type="text" name="description" id="description" placeholder="Description" value="<?= $connaissance['text'] ?>"/></td>
                 <td id="couleur"><input type="text" name="couleur" id="couleur" placeholder="#000" value="<?= $connaissance['couleur'] ?>"/></td>
-                <td><a href="#" id="<?= $connaissance['id'] ?>" class="update"><i class="fa fa-pencil-square"></i></a>
+                <td><a href="#" id="<?= $connaissance['id'] ?>" class="update"><i class="fas fa-pen-square"></i></a>
                     <a href="#" id="<?= $connaissance['id'] ?>" class="delete"><i class="fa fa-window-close""></i></a></td>
             </tr>
             <?php endforeach; ?>

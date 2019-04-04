@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Administration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="views/css/app.css">
     <link rel="stylesheet" href="views/css/burger.css">
@@ -30,15 +30,15 @@
 </main>
 <footer>
     <nav id="reseaux">
-        <a href="#"><i class="fa fa-facebook-square"></i></a>
-        <a href="#"><i class="fa fa-twitter-square"></i></a>
-        <a href="#"><i class="fa fa-google-plus-square"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+        <a href="#"><i class="fab fa-google-plus-square"></i></a>
     </nav>
-    <p>&copy;Copyright - 2018 - <a href="/home">Claire Erhard</a> -
+    <p>&copy;Copyright - 2018 - <a href="home">Claire Erhard</a> -
         <?php if(!empty($_SESSION['username'])){
-            echo "<a href=\"/deconnexion\"><i class=\"fa fa-unlock\"></i>";
+            echo "<a href=\"deconnexion\"><i class=\"fa fa-unlock\"></i>";
         }else{
-            echo "<a href=\"/connection-admin\"><i class=\"fa fa-lock\"></i>";
+            echo "<a href=\"connection-admin\"><i class=\"fa fa-lock\"></i>";
         }
         ?>
 </footer>
